@@ -12,8 +12,8 @@ app.get("/pdf", async (req, res) => {
 });
 app.get("/content", async (req, res) => {
   const { url } = req.query;
-  const content = await getContent(url);
-  res.json({ content });
+  const payload = await getContent(url);
+  res.json({ payload });
 });
 
 app.listen(PORT, () => {
