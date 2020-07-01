@@ -1,5 +1,5 @@
 const express = require("express");
-const { getPdf, getContent } = require("./pdf");
+const { getPdf, getContent } = require("./browser");
 const PORT = process.env.PORT || 5000;
 
 const app = express();
@@ -13,7 +13,7 @@ app.get("/pdf", async (req, res) => {
 app.get("/content", async (req, res) => {
   const { url } = req.query;
   const content = await getContent(url);
-  res.json(content);
+  res.json({ content });
 });
 
 app.listen(PORT, () => {

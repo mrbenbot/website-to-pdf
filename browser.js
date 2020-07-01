@@ -27,7 +27,8 @@ module.exports = {
     const code = await page.evaluate(() => {
       const html = document.querySelector("#id_code_html").value;
       const css = document.querySelector("#id_code_css").value;
-      return { html, css };
+      const js = document.querySelector("#id_code_js").value;
+      return { html, css, js };
     });
     await page.close();
     return code;
